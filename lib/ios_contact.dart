@@ -203,8 +203,11 @@ class ios_contactState extends State<ios_contact> with SingleTickerProviderState
                         builder: (context,ContactList,child) {
 
                           return ElevatedButton(
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+                            ),
                             onPressed: () {
-                              contactprovider.addContact(mainContact(Fullname.text.toString(), Phonenumber.text.toString(), Chat.text.toString(), dateinput.text.toString(), timeinput.text.toString()));
+                              contactprovider.addContact(mainContact(Fullname.text.toString(), Phonenumber.text.toString(), Chat.text.toString(), dateinput.text.toString(), forvaluesprovider.Time.toString()));
                               contactprovider.saveContacts();
                               Fullname.clear();Phonenumber.clear();Chat.clear();dateinput.clear();timeinput.clear();
 
@@ -290,7 +293,7 @@ class ios_contactState extends State<ios_contact> with SingleTickerProviderState
                         backgroundColor:c,
                         child: Text(contactprovider.contacts[i].fullname[0])
                     ),
-                    trailing: Text("${contactprovider.contacts[i].date}  ${forvaluesprovider.Time}",style: TextStyle(
+                    trailing: Text("${contactprovider.contacts[i].date}  ${contactprovider.contacts[i].time}",style: TextStyle(
                         color: themeProvider.currentTheme.focusColor,
                         fontWeight: FontWeight.w400
                     ),),

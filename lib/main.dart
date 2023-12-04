@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:platform_converter_app/Splace_Screen.dart';
 import 'package:platform_converter_app/ThemeProvider.dart';
 import 'package:platform_converter_app/android_contact.dart';
 import 'package:provider/provider.dart';
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/addContact': (context) => android_contact(),
       },
-      home:android_contact(),
+      home:Splace_Screen(),
 
 
     );

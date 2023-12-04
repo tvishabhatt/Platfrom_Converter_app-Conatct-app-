@@ -259,6 +259,9 @@ class android_contactState extends State<android_contact> with SingleTickerProvi
                                       builder: (context,ContactList,child) {
 
                                         return ElevatedButton(
+                                          style: ButtonStyle(
+                                            backgroundColor: MaterialStateProperty.all<Color>(Color(0xff6A53A7)),
+                                          ),
                                           onPressed: () {
                                             contactprovider.addContact(mainContact(Fullname.text.toString(), Phonenumber.text.toString(), Chat.text.toString(), dateinput.text.toString(), timeinput.text.toString()));
                                             contactprovider.saveContacts();
